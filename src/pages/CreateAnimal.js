@@ -3,19 +3,16 @@ import { TitleBar } from "./TitleBar";
 import { NavBar } from "./Navbar";
 
 export const CreateTrainingLog = () => {
-  // State variables for animal selection and date
   const [selectedAnimal, setSelectedAnimal] = useState("");
   const [selectedMonth, setSelectedMonth] = useState("");
   const [selectedDay, setSelectedDay] = useState("");
   const [selectedYear, setSelectedYear] = useState("");
   const [notes, setNotes] = useState("");
 
-  // Function to handle changes in animal selection
   const handleAnimalChange = (event) => {
     setSelectedAnimal(event.target.value);
   };
 
-  // Function to handle changes in month selection
   const handleMonthChange = (event) => {
     setSelectedMonth(event.target.value);
   };
