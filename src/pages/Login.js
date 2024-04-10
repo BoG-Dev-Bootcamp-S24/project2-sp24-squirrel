@@ -31,7 +31,7 @@ export default function Login() {
             </button>
             <p className="font-normal text-black text-[25px] text-center tracking-[0] leading-[normal] mb-0">
               <span className="font-light">Don’t have an account? </span>
-              <Link to="/signup" className="font-medium">Sign up</Link>
+              <div className="font-medium">Sign up</div>
             </p>
           </div>
         </div>
