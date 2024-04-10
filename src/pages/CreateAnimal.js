@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { TitleBar } from "./TitleBar";
-import { NavBar } from "./Navbar";
+import Sidebar from "@/components/sidebar";
 
-export const CreateTrainingLog = () => {
+export const CreateAnimal = () => {
   const [selectedAnimal, setSelectedAnimal] = useState("");
   const [selectedMonth, setSelectedMonth] = useState("");
   const [selectedDay, setSelectedDay] = useState("");
@@ -28,8 +27,7 @@ export const CreateTrainingLog = () => {
   return (
     <div className="bg-white flex flex-row justify-center w-full">
       <div className="bg-white w-full relative">
-        <TitleBar />
-        <NavBar />
+        <Sidebar />
         <div className="w-[877px] h-[74px] rounded-[5px] border-2 border-solid border-[#c0bfbf] absolute bg-white">
           <div className="[font-family: 'Heebo-Medium', Helvetica] font-medium text-[#1b1b1b] text-[26px[ tracking-[0] leading-[normal]">
             Animal Name

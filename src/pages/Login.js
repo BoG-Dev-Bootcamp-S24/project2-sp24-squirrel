@@ -1,12 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import TitleBar from "/components/TitleBar";
 
-export default function Home() {
+export default function Login() {
   return (
     <div className="bg-white flex flex-row justify-center w-full">
       <div className="bg-white w-full h-screen relative">
-        <TitleBar />
         <div className="absolute top-[400px] left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <div className="w-[700px]">
             <div className="w-full justify-center [font-family:'Heebo-Bold',Helvetica] font-bold text-black text-[64px] tracking-[0] leading-[normal] text-center mb-20">
