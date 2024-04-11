@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import penIcon from '../assets/solar_pen-bold.png';
+import editButton from '../../public/images/trainingLogCardEditButton.png';
 
 export default function TrainingLogs(props) {
   // Using default props for demonstration purposes
@@ -38,8 +38,8 @@ export default function TrainingLogs(props) {
         <p className="text-sm text-gray-500">{user} - {animal} - {name}</p>
         <p className="text-sm text-black">{description}</p>
       </div>
-      <button onClick={click} className="flex items-center justify-center w-14 h-14 rounded-full bg-red-600">
-                    <Image src={penIcon} alt="Pen" width={25} height={25} />
+      <button onClick={click} className="flex items-center justify-center w-14 h-14">
+                    <Image src={editButton} alt="Pen" width={45} height={45} />
         </button>
     </div>
   );
