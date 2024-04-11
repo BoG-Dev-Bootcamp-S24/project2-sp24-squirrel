@@ -1,7 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react'
+import Link from "next/link";
 
 export default function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   return (
     <div className="bg-white flex flex-row justify-center w-full">
       <div className="bg-white w-full h-screen relative">
@@ -15,6 +17,7 @@ export default function Login() {
                 type="text"
                 placeholder="Email"
                 className="h-[37px] w-full font-light text-black text-[25px] tracking-[0] leading-[normal] border-none outline-none"
+                onChange={(event) => setEmail(event.target.value)}
               />
               <div className="absolute bottom-0 left-0 w-full h-0.5 bg-red-500"></div>
             </div>
@@ -23,6 +26,7 @@ export default function Login() {
                 type="password"
                 placeholder="Password"
                 className="h-[37px] w-full font-light text-black text-[25px] tracking-[0] leading-[normal] border-none outline-none"
+                onChange={(event) => setPassword(event.target.value)}
               />
               <div className="absolute bottom-0 left-0 w-full h-0.5 bg-red-500"></div>
             </div>
@@ -31,7 +35,9 @@ export default function Login() {
             </button>
             <p className="font-normal text-black text-[25px] text-center tracking-[0] leading-[normal] mb-0">
               <span className="font-light">Don’t have an account? </span>
-              <div className="font-medium">Sign up</div>
+              <Link href="/signup" className="font-medium">
+                Sign up
+              </Link>
             </p>
           </div>
         </div>
