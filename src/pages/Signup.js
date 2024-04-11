@@ -47,14 +47,14 @@ export default function Signup() {
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full px-3 py-2 border-b-2 border-red-600 mb-4"
+          className="w-full px-3 py-2 border-b-2 border-red-600 mb-4 text-black"
         />
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full px-3 py-2 border-b-2 border-red-600 mb-4"
+          className="w-full px-3 py-2 border-b-2 border-red-600 mb-4 text-black"
         />
         <input
           type="password"

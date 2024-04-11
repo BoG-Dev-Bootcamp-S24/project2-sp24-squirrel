@@ -8,12 +8,13 @@ import TrainingLogDisplay from "./TrainingLogDisplay";
 import Animals from "../components/Animals";
 import AnimalsDisplay from "./AnimalsDisplay";
 import AllUsers from "../pages/AllUsers";
+import { BrowserRouter as Router } from 'react-router-dom';
 
 export default function Home() {
   return (
     <div className="bg-white w-screen h-screen flex flex-col justify-between items-center">
     <div>
-      <Signup />
+      <Login />
     </div>
 
     </div>

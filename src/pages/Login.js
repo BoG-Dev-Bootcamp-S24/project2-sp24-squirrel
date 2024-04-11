@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import SearchBar from '../components/searchbar';
 import Image from 'next/image';
 import quarterCircle from '../../public/images/quarterCircle.png';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export default function Signup() {
   const [email, setEmail] = useState('');
@@ -37,26 +39,26 @@ export default function Signup() {
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full px-3 py-2 border-b-2 border-red-600 mb-4"
+          className="w-full px-3 py-2 border-b-2 border-red-600 mb-4 text-black"
         />
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full px-3 py-2 border-b-2 border-red-600 mb-4"
+          className="w-full px-3 py-2 border-b-2 border-red-600 mb-4 text-black"
         />
 
         <button
           onClick={handleSignup}
           className="w-full py-3 bg-red-600 text-white font-bold rounded mb-4"
         >
-          Sign up
+          Log in
         </button>
         <div className="text-center">
           <span className="text-sm text-black">Don't have an account? </span>
           <a href="/login" className="text-sm font-bold text-black">
-            Sign up
+            Log in
           </a>
         </div>
       </div>
