@@ -1,5 +1,5 @@
 import React from "react";
-import TrainingLogs from "./TrainingLogs";
+import TrainingLogs from "../components/TrainingLogs";
 import addIcon from  "/public/images/createNewLogo.png";
 import { Inter } from "next/font/google";
 
