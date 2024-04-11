@@ -2,14 +2,14 @@ import React from 'react';
 
 const UserCard = ({ name, identity, location, initial }) => {
   return (
-    <div className="flex flex-col rounded-lg overflow-hidden shadow-lg max-w-sm mx-auto bg-white">
-      <div className="flex justify-between items-center p-4 bg-white border-b border-gray-200">
+    <div className="flex flex-col rounded-lg overflow-hidden shadow-lg max-w-md mx-auto bg-white">
+      <div className="p-4 pr-16 bg-white border-b border-gray-200">
         <div className="flex items-center">
           <div className="flex items-center justify-center w-12 h-12 bg-red-600 rounded-full text-white text-2xl font-bold">
             {initial}
           </div>
           <div className="ml-4">
-            <p className="text-lg font-bold text-gray-800">{name}</p>
+            <p className="text-lg font-bold text-gray-600">{name}</p>
             <p className="text-sm text-gray-600">{identity} • {location}</p>
           </div>
         </div>
