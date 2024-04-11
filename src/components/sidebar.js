@@ -11,7 +11,7 @@ function Sidebar() {
     const [isHoveringAllUsers, setIsHoveringAllUsers] = useState(false);
 
     return (
-        <div className="w-64 h-screen bg-white shadow-md flex flex-col justify-between">
+        <div className="w-64 h-screen bg-white shadow-md flex flex-col">
           {/* Top Section with Links */}
           <div>
             
@@ -107,7 +107,7 @@ function Sidebar() {
           </div>
           
 
-          <div className="px-3 pt-2">
+          <div className="px-3 pt-2 mt-[230%]">
             <hr className="border-t mx-3 my-2 border-gray-300" />
             <div className="flex justify-between items-center pb-2">
               <div className="flex items-center">
