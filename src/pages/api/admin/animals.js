@@ -1,14 +1,12 @@
-const Animal = require('./models/Animal');
+import readAnimals from "../../../../server/mongodb/actions/getAnimals";
 
-async function getAllAnimals() {
-  try {
-    const animals = await Animal.find();
-    return animals;
-  } catch (error) {
-    throw new Error('Failed to fetch animals');
-  }
+export default async function handler(req, res) {
+    if (req.method == 'GET') {
+        try {
+            const result = await readAnimals();
+            return res.status(200).send(result);
+        } catch (e) {
+            return res.status(500).send(e.message);
+        }
+    }
 }
-
-module.exports = {
-  getAllAnimals
-};

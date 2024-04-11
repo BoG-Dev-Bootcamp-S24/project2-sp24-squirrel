@@ -11,17 +11,27 @@ export default function Signup() {
   const [isAdmin, setIsAdmin] = useState(false);
 
   async function handleSignup() {
-    const res = await fetch("api/user/verify", {
+    console.log(fullName);
+    const res = await fetch("api/user", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
+        fullName: fullName,
         email: email,
         password: password,
+        admin: isAdmin,
       }),
     });
     let verify = await res.json();
+    router.push('/TrainingLogDisplay',
+    { 
+      query: { 
+        fullName: result.fullName,
+        id: result.id
+      }
+    });
   }
 
   return (
@@ -40,7 +50,7 @@ export default function Signup() {
           placeholder="Full Name"
           value={fullName}
           onChange={(e) => setFullName(e.target.value)}
-          className="w-full px-3 py-2 border-b-2 border-red-600 mb-4"
+          className="w-full px-3 py-2 border-b-2 border-red-600 mb-4 text-black"
         />
         <input
           type="email"
@@ -61,7 +71,7 @@ export default function Signup() {
           placeholder="Confirm Password"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
-          className="w-full px-3 py-2 border-b-2 border-red-600 mb-4"
+          className="w-full px-3 py-2 border-b-2 border-red-600 mb-4 text-black"
         />
         <div className="flex items-center mb-6 text-black">
           <input
@@ -80,7 +90,7 @@ export default function Signup() {
         </button>
         <div className="text-center">
           <span className="text-sm text-black">Already have an account? </span>
-          <a href="/login" className="text-sm font-bold text-black">
+          <a href="/Login" className="text-sm font-bold text-black">
             Sign in
           </a>
         </div>

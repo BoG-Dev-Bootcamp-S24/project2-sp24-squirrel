@@ -1,12 +1,13 @@
-import connectDB from "..";
-import Animal from "../models/Animal";
+import connectDB from "../..";
+import Animal from "../../models/Animal";
 
-export default async function getAllAnimals() {
+export default async function readAnimals() {
     try {
         await connectDB();
-        return JSON.stringify(await Animal.find());
-    } catch (error) {
-        console.error("Error connecting to database", error);
-        throw error;
+        let res = await Animal.find();
+        return res;
+    } catch (e) {
+        console.log(e);
+        throw e;
     }
 }

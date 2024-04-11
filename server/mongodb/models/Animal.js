@@ -1,26 +1,28 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const animalSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-  },
-  breed: {
-    type: String,
-    required: true,
-  },
-  hoursTrained: {
-    type: Number,
-    required: true,
-  },
-  birthday: {
-    type: String,
-    required: true,
-  },
-  notes: {
-    type: String,
-  },
+    ownerId : {
+        type : mongoose.Schema.Types.ObjectId,
+        required : true
+    },
+    name : {
+        type : String,
+        required : true
+    },
+    breed : {
+        type : String,
+        required : true
+    },
+    hoursTrained : {
+        type : Number,
+        required : true
+    },
+    birthday : {
+        type : Date,
+        required : true
+    },
+    note : String,
+    userName : String
 });
 
-export default mongoose.models?.Animal ||
-  mongoose.model("Animal", animalSchema);
+export default mongoose.models?.Animal || mongoose.model("Animal", animalSchema);
