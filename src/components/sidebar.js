@@ -106,10 +106,10 @@ function Sidebar() {
             </div>
           </div>
           
-          {/* Bottom Section with User Info */}
+
           <div className="px-3 pt-2">
-            <hr className="border-t mx-3 my-2 border-gray-300" /> {/* Reduced top and bottom margin */}
-            <div className="flex justify-between items-center pb-2"> {/* Reduced bottom padding */}
+            <hr className="border-t mx-3 my-2 border-gray-300" />
+            <div className="flex justify-between items-center pb-2">
               <div className="flex items-center">
                 <div className="bg-red-600 rounded-full h-10 w-10 flex items-center justify-center text-white mr-3">
                   <span className="font-bold">L</span>

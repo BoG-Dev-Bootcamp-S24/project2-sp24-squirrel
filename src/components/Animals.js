@@ -1,30 +1,32 @@
-import React from 'react'
-import Image from 'next/image';
-import dogImage from '../assets/dog1.png';
+import Image from "next/image";
+import { Inter } from "next/font/google";
+const inter = Inter({ subsets: ["latin"] });
 
-export default function AnimalCard() {
-
-    const dummyData = {
-        name: "Lucy",
-        breed: "Golden Retriever",
-        owner: "Long Lam",
-        hoursTrained: 100,
-        profilePicture: dogImage, 
-        initial: "L", 
-    };
+export default function Animal({ animal }) {
+    const ownerInitial = animal.owner.substring(0, 1);
+    const { name, breed, owner, hours, imageLocation } = animal;
 
     return (
-        <div className="flex flex-col rounded-lg overflow-hidden shadow-lg max-w-sm mx-auto bg-white">
-            <div className="relative w-full h-56">
-                <img src={dummyData.profilePicture} alt={dummyData.name} className="object-contain h-full w-full" />
-            </div>
-            <div className="relative p-4">
-                <div className="flex items-center justify-center w-12 h-12 bg-red-600 rounded-full text-white text-2xl font-bold -mt-6 ml-4">
-                    {dummyData.initial}
+        <div className="flex flex-col justify-between items-center w-[28%] aspect-square text-black rounded-xl shadow-lg mx-[1.5%] mb-[3%]">
+            <Image 
+                src={imageLocation} 
+                alt="Animal photo" 
+                className="object-cover w-[100%] h-[75%] rounded-t-xl"
+                width={0}
+                height={0}
+                sizes="100vw"
+            />
+            <div className="h-[25%] w-[100%] flex flex-row items-center">
+                <div className="mx-5 bg-red-600 h-[50%] flex items-center justify-center aspect-square rounded-full font-semibold text-white text-2xl">
+                    {ownerInitial}
                 </div>
-                <div className="mt-8">
-                    <p className="text-lg font-bold text-gray-800">{dummyData.name} - {dummyData.breed}</p>
-                    <p className="text-gray-600"> {dummyData.owner} • Trained {dummyData.hoursTrained} hours</p>
+                <div className="bg-white">
+                    <div className="whitespace-nowrap text-lg">
+                        <span className="font-bold">{name}</span> - {breed}
+                    </div>
+                    <div className="text-slate-500 text-sm">
+                        {owner} • Trained: {hours} hours
+                    </div>
                 </div>
             </div>
         </div>

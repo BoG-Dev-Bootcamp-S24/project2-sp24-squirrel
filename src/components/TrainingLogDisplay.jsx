@@ -1,6 +1,7 @@
 import React from "react";
 import TrainingLogs from "./TrainingLogs";
-import addIcon from '../assets/icon-add.png';
+import addIcon from  "/public/images/createNewLogo.png";
+import { Inter } from "next/font/google";
 
 const mockData = [
     {
