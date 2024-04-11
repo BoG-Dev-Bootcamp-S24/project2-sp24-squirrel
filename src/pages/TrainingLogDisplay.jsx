@@ -2,6 +2,8 @@ import React from "react";
 import TrainingLogs from "../components/TrainingLogs";
 import addIcon from  "/public/images/createNewLogo.png";
 import { Inter } from "next/font/google";
+import Searchbar from "../components/searchbar";
+import Sidebar from "../components/sidebar";
 
 const mockData = [
     {
@@ -52,29 +54,41 @@ export default function TrainingLogDisplay() {
     };
   
     return (
-      <div className="space-y-4">
-        <div className="flex justify-between items-center border-b border-gray-400 py-2 px-2 bg-white" style={{ height: '7.5vh' }}>
-            <p className="text-xl">Training logs</p>
-            <div className="flex items-center pr-8 cursor-pointer" style={{ width: '7vw', height: '7.5vh' }} onClick={handleCreateNewClick}>
-                <img src={addIcon} className="mr-2 w-6 h-6 hover:opacity-85" alt="Create new"/>
-                <p className="text-base">Create new</p>
-            </div>
+      <div className="relative w-full h-full mt-0 p-0" style={{ backgroundColor: 'white' }}>
+        <div className="fixed top-0 left-0 right-0">
+          <Searchbar />
         </div>
   
-        {/* Logs */}
-        {mockData.map((log, index) => (
-          <TrainingLogs
-            key={index}
-            title={log.title}
-            date={log.date}
-            description={log.description}
-            hours={log.hours}
-            user={log.user}
-            animal={log.animal}
-            name={log.name}
-            click={() => handleEditClick(index)}
-          />
-        ))}
+        <div className="flex w-full h-full pt-16 m-0">
+          <div className="z-10">
+            <Sidebar />
+          </div>
+  
+          <div className="flex-grow">
+            <div className="space-y-4">
+
+              <div className="m-2 ml-5 mr-5 flex justify-between items-center border-b border-gray-400 py-2 px-1 bg-white" style={{ height: '7.5vh' }}>
+                <p className="text-xl text-black">Training logs</p>
+              </div>
+  
+              {mockData.map((log, index) => (
+                <div className="m-2 ml-5 mr-5"> 
+                  <TrainingLogs
+                    key={index}
+                    title={log.title}
+                    date={log.date}
+                    description={log.description}
+                    hours={log.hours}
+                    user={log.user}
+                    animal={log.animal}
+                    name={log.name}
+                    click={() => handleEditClick(index)}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     );
-}
+  }

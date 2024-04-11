@@ -1,9 +1,9 @@
-import readTrainings from "../../../../server/mongodb/actions/getTrainings=Log";
+import readUsers from "../../../../server/mongodb/actions/getUsers";
 
 export default async function handler(req, res) {
     if (req.method == 'GET') {
         try {
-            const result = await readTrainings();
+            const result = await readUsers();
             return res.status(200).send(result);
         } catch (e) {
             return res.status(500).send(e.message);

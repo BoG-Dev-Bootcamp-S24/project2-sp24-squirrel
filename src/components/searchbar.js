@@ -16,6 +16,8 @@ function SearchBar() {
     console.log("Searching for:", searchTerm);
   };
 
+  
+
   return (
     <div className="bg-white py-2 px-4 flex items-center border-b border-gray-600">
       <div className="flex items-center ml-8">

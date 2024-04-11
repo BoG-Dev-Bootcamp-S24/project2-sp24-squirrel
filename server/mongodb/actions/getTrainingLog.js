@@ -1,12 +1,13 @@
-import connectDB from "..";
-import TrainingLog from "../models/TrainingLog";
+import connectDB from "../..";
+import TrainingLog from "../../models/TrainingLog";
 
-export default async function getAllTrainingLogs() {
+export default async function readTrainings() {
     try {
         await connectDB();
-        return JSON.stringify(await TrainingLog.find());
-    } catch (error) {
-        console.error("Error connecting to database", error);
-        throw error;
+        let res = await TrainingLog.find();
+        return res;
+    } catch (e) {
+        console.log(e);
+        throw e;
     }
 }

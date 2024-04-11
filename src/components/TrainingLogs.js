@@ -1,10 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import editButton from '../../public/images/trainingLogCardEditButton.png';
-import Searchbar from "./searchbar.js";
-import Sidebar from "./sidebar.js";
 
 export default function TrainingLogs(props) {
+  // Using default props for demonstration purposes
   const {
     title = "Complete sit lessons",
     date = "2023-10-20T14:48:00.000Z",
@@ -23,13 +22,6 @@ export default function TrainingLogs(props) {
 
   return (
     <div className="flex items-start bg-white p-4 rounded-lg shadow-md space-x-4">
-    <div className="z-10">
-                    <Sidebar />
-                </div>
-    <div className="fixed top-0 left-0 right-0">
-                <Searchbar />
-            </div>
-            
       <div 
         className="flex-shrink-0 text-white rounded-lg p-4 text-center"
         style={{ backgroundColor: '#2c2f6c' }}
