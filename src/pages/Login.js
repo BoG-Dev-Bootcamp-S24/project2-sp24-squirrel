@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import SearchBar from '../components/searchbar';
+import Image from 'next/image';
+import quarterCircle from '../../public/images/quarterCircle.png';
 
-export default function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  async function login() {
+export default function Signup() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  async function handleSignup() {
     const res = await fetch("api/user/verify", {
       method: "POST",
       headers: {
@@ -18,41 +22,50 @@ export default function Login() {
   }
 
   return (
-    <div className="flex flex-col items-center w-full text-center [font-family:'Heebo-Bold',Helvetica]">
-      <div className="w-full font-bold text-black text-[50px] tracking-[0] leading-[normal] mt-20 mb-10">
-        Login
+    <>
+      <div className="fixed top-0 left-0 right-0">
+                <SearchBar />
+        </div>
+        <div className="fixed bottom-0 left-0">
+        <Image src={quarterCircle} alt="Quarter Circle" />
       </div>
-      <div className="flex flex-col items-start w-1/3">
+      <div className="flex flex-col justify-center min-h-screen pt-20 p-6 bg-white">
+        <div className="w-full max-w-md mx-auto">
+          <h1 className="mb-8 text-4xl text-center text-black font-bold">Login</h1>
         <input
-          type="text"
+          type="email"
           placeholder="Email"
-          className="border-b-2 border-red-600 w-full mt-10 text-xl"
+          value={email}
           onChange={(e) => setEmail(e.target.value)}
+          className="w-full px-3 py-2 border-b-2 border-red-600 mb-4"
         />
         <input
           type="password"
           placeholder="Password"
-          className="border-b-2 border-red-600 w-full mt-10 text-xl"
+          value={password}
           onChange={(e) => setPassword(e.target.value)}
+          className="w-full px-3 py-2 border-b-2 border-red-600 mb-4"
         />
 
         <button
-          className="bg-[#d21312] text-white w-full h-[70px] rounded-[20px] font-medium text-[30px] text-center tracking-[0] leading-[normal] mt-10 mb-5"
-          onClick={login}
+          onClick={handleSignup}
+          className="w-full py-3 bg-red-600 text-white font-bold rounded mb-4"
         >
-          Log in
-        </button>
-      </div>
-      <p className="text-black text-[25px] text-center tracking-[0] leading-[normal] mb-0">
-        <span className="font-light">Don't have an account? </span>
-        <a href="/" className="font-bold">
           Sign up
-        </a>
-      </p>
-      <p className="absolute bottom-0 left-0 w-full h-[58px] text-center font-normal text-[#000000b2] text-[15px] tracking-[0] leading-[normal] bg-white shadow-[0px_4px_4px_#00000040]">
-        Made with ♡ by Team Squirrel
-        <br />© 2024 BOG Developer Bootcamp. All rights reserved.
-      </p>
-    </div>
+        </button>
+        <div className="text-center">
+          <span className="text-sm text-black">Don't have an account? </span>
+          <a href="/login" className="text-sm font-bold text-black">
+            Sign up
+          </a>
+        </div>
+      </div>
+        <p className="mt-10 text-center text-sm text-gray-700">
+          Made with ♥ by Long Lam
+          <br />
+          © 2023 BOG Developer Bootcamp. All rights reserved.
+        </p>
+      </div>
+    </>
   );
 }

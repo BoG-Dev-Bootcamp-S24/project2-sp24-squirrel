@@ -1,7 +1,7 @@
 import React from 'react';
-import Animals from "./Animals";
-import Searchbar from "./searchbar.js";
-import Sidebar from "./sidebar.js";
+import Animals from "../components/Animals";
+import Searchbar from "../components/searchbar.js";
+import Sidebar from "../components/sidebar.js";
 
 export default function AnimalsDisplay({ user, allAnimals }) {
     const animal = {
