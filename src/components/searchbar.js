@@ -1,9 +1,9 @@
 // src/components/Searchbar.js
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 function SearchBar() {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   // Update state with the search input's value
   const handleSearchChange = (event) => {
@@ -13,19 +13,34 @@ function SearchBar() {
   // Handle form submission for the search
   const handleSearchSubmit = (event) => {
     event.preventDefault();
-    console.log('Searching for:', searchTerm);
+    console.log("Searching for:", searchTerm);
   };
 
   return (
     <div className="bg-white py-2 px-4 flex items-center border-b border-gray-600">
       <div className="flex items-center ml-8">
-        <img src="/images/appLogo.png" alt="App Logo" className="mr-3" width="36" height="36" />
+        <img
+          src="/images/appLogo.png"
+          alt="App Logo"
+          className="mr-3"
+          width="36"
+          height="36"
+        />
         <span className="font-bold text-black text-2xl">Progress</span>
       </div>
       {/* This is a spacer div that will grow and push the search bar to the center */}
       <div className="flex-grow"></div>
-      <form onSubmit={handleSearchSubmit} className="flex items-center border border-gray-600 rounded-lg w-2/5 max-w-4xl">
-        <img src="/images/searchLogo.png" alt="Search" className="ml-2" width="20" height="20" />
+      <form
+        onSubmit={handleSearchSubmit}
+        className="flex items-center border border-gray-600 rounded-lg w-2/5 max-w-4xl"
+      >
+        <img
+          src="/images/searchLogo.png"
+          alt="Search"
+          className="ml-2"
+          width="20"
+          height="20"
+        />
         <input
           type="text"
           placeholder="Search"
