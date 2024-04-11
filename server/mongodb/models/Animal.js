@@ -9,23 +9,15 @@ const animalSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  totalHours: {
+  hoursTrained: {
     type: Number,
     required: true,
   },
-  birthMonth: {
+  birthday: {
     type: String,
     required: true,
   },
-  birthDate: {
-    type: Number,
-    required: true,
-  },
-  birthYear: {
-    type: Number,
-    required: true,
-  },
-  note: {
+  notes: {
     type: String,
   },
 });

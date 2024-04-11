@@ -1,36 +1,20 @@
-import React, { useState, useEffect } from "react";
-import Link from "next/link";
-import Image from "next/image";
+import React, { useState } from "react";
 
 export default function Login() {
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [unmatch, setUnmatch] = useState(false);
-  const [admin, setAdmin] = useState(false);
   async function login() {
-    if (password !== confirmPassword) {
-      setUnmatch(true);
-      return;
-    }
-    let res = await fetch("/api/user", {
+    const res = await fetch("api/user/verify", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        name: name,
         email: email,
         password: password,
-        admin: admin,
       }),
     });
-    if (res.status === 200) {
-      window.location.href = "/login";
-    } else {
-      setError(true);
-    }
+    let verify = await res.json();
   }
 
   return (

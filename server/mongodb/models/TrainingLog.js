@@ -5,28 +5,20 @@ const trainingLogSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  animalId: {
+  animal: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Animal',
     required: true,
   },
-  totalHours: {
+  trainedHours: {
     type: Number,
     required: true,
   },
-  birthMonth: {
+  date: {
     type: String,
     required: true,
   },
-  birthDate: {
-    type: Number,
-    required: true,
-  },
-  birthYear: {
-    type: Number,
-    required: true,
-  },
-  note: {
+  notes: {
     type: String,
   }
 });
